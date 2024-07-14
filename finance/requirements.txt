@@ -1,0 +1,5 @@
+cs50
+Flask
+Flask-Session
+requests
+export API_KEY=pk_516470cb1edf458ba2b4c0a3e875d582

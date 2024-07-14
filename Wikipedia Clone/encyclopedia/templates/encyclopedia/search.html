@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title|safe }}
+{% endblock %}
+
+{% block body %}
+{% if title == "search result"%}
+    <h1>All possible Pages</h1>
+
+    <ul>
+    {% for entry in data %}
+        <li><a href = "/{{ entry }}">{{ entry }}</a></li>
+    {% endfor %}
+    </ul>
+
+{%else%}
+    <p>{{ data|safe }}</p>
+{%endif%}
+
+{% endblock %}

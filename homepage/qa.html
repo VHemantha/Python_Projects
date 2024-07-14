@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <title>MyAstronomicalSociety</title>
+    <script>
+        // TODO: Add code to check answers to questions
+    document.addEventListener('DOMContentLoaded', function(){
+        let bat = document.querySelectorAll('.bat');
+            for(let i = 0; i < bat.length; i++){
+                bat[i].addEventListener('click',function(){
+                bat[i].style.backgroundColor = 'green';
+                let cat = document.querySelectorAll('.cat');
+                    for(let i = 0; i < cat.length; i++)
+                    cat[i].style.backgroundColor = '#d9ff99';
+            });
+
+        }
+
+            let cat = document.querySelectorAll('.cat');
+            for(let i = 0; i < cat.length; i++){
+                cat[i].addEventListener('click',function(){
+                cat[i].style.backgroundColor = 'red';
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+    <div class = "siteheading">
+        <h2>
+            Our Astronomical Society
+        </h2>
+    </div>
+    <div class="container-fluid">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="document.html">Documents</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="images.html">Images</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="qa.html">Take Test</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h3>
+            Take the quize !
+        </h3>
+
+        <div class="container" id="quiztext">
+            <div class="section">
+                <h2>6 Multiple Choice Questions</h2>
+                <hr>
+                <h3>What is the largest planet in solar system ?</h3>
+
+                <button class = "cat">Pluto</button>
+                <button class = "cat">Neptune</button>
+                <button class = "cat">Saturn</button>
+                <button class = "cat">Venus</button>
+                <button class = "bat">Jupiter</button>
+
+            </div>
+            <div class="section">
+            <h3>How many satalites does earth has?</h3>
+
+            <button class = "bat">one</button>
+            <button class = "cat">two</button>
+            <button class = "cat">three</button>
+            <button class = "cat">five</button>
+            <button class = "cat">none</button>
+
+        </div>
+        <div class="section">
+            <h3>How many hours does earth takes per rotation ?</h3>
+
+            <button class = "cat">12</button>
+            <button class = "cat">36</button>
+            <button class = "bat">24</button>
+            <button class = "cat">48</button>
+            <button class = "cat">365</button>
+
+        </div>
+        <div class="section">
+            <h3>Select the gas that sun has made up mostly?</h3>
+
+            <button class = "cat">Nitrogen</button>
+            <button class = "cat">Clorine</button>
+            <button class = "cat">Carbondioxide</button>
+            <button class = "bat">Hydrogen</button>
+            <button class = "cat">Oxygen</button>
+
+        </div>
+        <div class="section">
+            <h3>Select the person landed first on moon?</h3>
+
+            <button class = "bat">Neil Armstrong</button>
+            <button class = "cat">Edwin oldrin</button>
+            <button class = "cat">Galilio</button>
+            <button class = "cat">Nikolas Kopernikas</button>
+            <button class = "cat">Einstein</button>
+
+        </div>
+        <div class="section">
+            <h3>Name the first Artifitial Satelite?</h3>
+
+            <button class = "cat">Rover</button>
+            <button class = "cat">Apollo</button>
+            <button class = "cat">Discovery</button>
+            <button class = "bat">Sputnik 1</button>
+            <button class = "cat">none</button>
+
+        </div>
+        </div>
+    </div>
+    </body>
+    <footer class = "fot">
+        <div>
+            <ul>
+                <li>
+                    <a class = "stylefooter">Phone number : 123456</a>
+                </li>
+                <li>
+                <a class = "stylefooter">E-mail : astronomy.com</a>
+                </li>
+                <li>
+                <a class = "stylefooter">adress: this street,this country</a>
+                </li>
+            </ul>
+        </div>
+        <div id = "footer">
+        created by viraj
+        </div>
+    </footer>
+</div>
+</html>

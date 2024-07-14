@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        document.addEventListener('DOMContentLoaded', function(){
+                let bat = document.querySelector('.bat');
+                bat.addEventListener('click',function(){
+                    bat.style.backgroundColor = 'green';
+                    let cat = document.querySelectorAll('.cat');
+                        for(let i = 0; i < cat.length; i++)
+                        cat[i].style.backgroundColor = '#d9edff';
+                        document.querySelector('#result').innerHTML = 'Correct!';
+                });
+
+                let cat = document.querySelectorAll('.cat');
+                for(let i = 0; i < cat.length; i++){
+                    cat[i].addEventListener('click',function(){
+                    cat[i].style.backgroundColor = 'red';
+                    document.querySelector('#result').innerHTML = 'Incorrect';
+                });
+            }
+
+            document.querySelector('#Check').addEventListener('click', function(){
+                let answer = document.querySelector('input');
+                if (answer.value.toUpperCase() == "MARS"){
+                    answer.style.backgroundColor = 'green';
+                    document.querySelector('#result1').innerHTML = 'Correct!';
+                }else{
+                    answer.style.backgroundColor = 'red';
+                    document.querySelector('#result1').innerHTML = 'Incorrect';
+                }
+            });
+
+        });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the largest planet in solar system ?</h3>
+
+                <button class = "cat">Pluto</button>
+                <button class = "cat">Neptune</button>
+                <button class = "cat">Saturn</button>
+                <button class = "cat">Venus</button>
+                <button class = "bat">Jupiter</button>
+
+                <p id ="result"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the red planet in solar system?</h3>
+
+                    <input type="Text"></input>
+                    <button id = "Check">Check Answer</button>
+
+                    <p id ="result1"></p>
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+textarea {
+    min-height: 400px;
+}
+
+#mal {
+    border-style: solid;
+    padding: 10px;
+    border-width: 0.5px;
+    background-color: white;
+}
+
+.time {
+    float: right;
+}

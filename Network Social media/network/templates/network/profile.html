@@ -1,0 +1,48 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div>
+    <H2>{{profilename}}</H2>
+</div>
+{% if profilename|safe == request.user.username %}
+{% elif namec == 1 %}
+<form action="{% url 'profile' profilename %}" method="post">
+    {% csrf_token %}
+<button name="follow" class="btn btn-primary mb-2">Follow</button>
+</form>
+{% else %}
+<form action="{% url 'profile' profilename %}" method="post">
+    {% csrf_token %}
+<button name="unfollow" class="btn btn-primary mb-2">UnFollow</button>
+</form>
+{% endif %}
+<div class="div">
+    <h3>followers : {{ folws|safe }}</h3>
+    <h3>follows : {{ folwer |safe }}</h3>
+</div>
+{% for row in myposts %}
+<div class="div">
+    <p>{{ row.user_id }}</p>
+    <p>{{ row.post }}</p>
+    <p>{{ row.time }}</p>
+    <button>&#128151 Like</button><span>{{ row.like }}</span>
+</div>
+{% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if myposts.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ myposts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ myposts.number }} of {{ myposts.paginator.num_pages }}.
+        </span>
+
+        {% if myposts.has_next %}
+            <a href="?page={{ myposts.next_page_number }}">next</a>
+            <a href="?page={{ myposts.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

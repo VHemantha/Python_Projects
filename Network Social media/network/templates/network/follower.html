@@ -1,0 +1,31 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div>
+    {% for row in fol_post %}
+    <div class="div">
+        <a name="{{ row.user_id }}" href="network/{{ row.user_id }}"><p>{{ row.user_id }}</p></a>
+        <p>{{ row.post }}</p>
+        <h6>{{ row.time }}</h6>
+        <button> &#128151 like</button><span>{{ row.like }}</span>
+    </div>
+    {% endfor %}
+</div>
+<div class="pagination">
+    <span class="step-links">
+        {% if fol_post.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ fol_post.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ fol_post.number }} of {{ fol_post.paginator.num_pages }}.
+        </span>
+
+        {% if fol_post.has_next %}
+            <a href="?page={{ fol_post.next_page_number }}">next</a>
+            <a href="?page={{ fol_post.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

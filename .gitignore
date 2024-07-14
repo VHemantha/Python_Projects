@@ -1,0 +1,196 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dylib
+db.sqlite3
+*.sqlite3
+media
+
+# If your build process includes running collectstatic, you probably don't need or want to include collected static files in your repository
+/staticfiles
+/static
+
+# Avoid committing .env files which typically contain sensitive information such as API keys and credentials
+.env
+
+# Ignore all local environment specific settings
+local_settings.py
+
+# Ignore specific IDE files
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# pipenv
+Pipfile.lock
+
+# Celery beat schedule file
+celerybeat-schedule
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# MySQL
+*.sql
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Visual Studio Code
+.vscode/
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media
+staticfiles
+
+# Python
+*.pyc
+__pycache__
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.env
+.venv
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# dotenv
+.env
+
+# virtualenv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# distributions
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+
+# Django migrations
+*/migrations/*
+
+# JavaScript
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp/
+.pnp.js
+.eslintcache
+.parcel-cache/
+.next/
+out/
+.nuxt/
+dist/
+build/
+.idea/
+.vscode/
+*.log
+.DS_Store
+*.local
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+.cypress/
+*.gz
+*.zip
+
+# Project files
+package-lock.json
+yarn.lock

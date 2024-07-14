@@ -1,0 +1,32 @@
+.div{
+    padding: 10px;
+    margin-left: flex;
+    margin-right: flex;
+    text-align: left;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;   
+}
+.div:hover{
+    background-color: #ffffee;
+}
+button {
+    border: none;
+    background-color: white;
+}
+
+
+.textarea{
+padding: 10px;
+margin: 10px;
+border-style: solid;
+border-color: grey;
+border-radius: 5px;
+
+}
+
+#save{
+    color: #ffffee;
+    background-color: orange;
+    border-radius: 1px;
+}

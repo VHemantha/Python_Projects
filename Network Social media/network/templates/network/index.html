@@ -1,0 +1,95 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div class="form_post">
+    <form action="{% url 'index' %}" method="post" class="form-inline">
+        {% csrf_token %}
+        <textarea name="newpost" id="post" cols="150" class="textarea"></textarea>
+        <input type="submit" value="Post" class="btn btn-primary mb-2">
+    </form>
+</div>
+<div>
+    {% for row in post_data %}
+    <div id="div{{ row.id }}" class="div">
+        <a name="{{ row.user_id }}" href="network/{{ row.user_id }}"><p>{{ row.user_id }}</p></a>
+    <p id="P{{ row.id }}">{{ row.post }}</p>
+    <h6>{{ row.time }}</h6> 
+    <button id=likes value="{{ row.id }}"> &#128151 like</button>
+    <span id="L{{ row.id }}">{{ row.like }}</span>
+    {% if row.user_id|safe == request.user.username|safe %}
+    <button id="edit" value="{{ row.id }}"> Edit</button>
+    {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if post_data.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ post_data.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ post_data.number }} of {{ post_data.paginator.num_pages }}.
+        </span>
+
+        {% if post_data.has_next %}
+            <a href="?page={{ post_data.next_page_number }}">next</a>
+            <a href="?page={{ post_data.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        let cat = document.querySelectorAll('#edit');
+                for(let i = 0; i < cat.length; i++){
+                    cat[i].addEventListener('click',function(){
+                    let but = cat[i].value;
+                    let content = document.querySelector(`#P${but}`).innerHTML;
+                    let texta = document.createElement('textarea');
+                    let button = document.createElement('button');
+                    texta.innerHTML = content;
+                    texta.id = `saved`
+                    button.innerHTML = "Save"
+                    button.id = "save"
+                    document.querySelector(`#P${but}`).style.display = 'none';
+                    document.querySelector(`#div${but}`).append(texta);
+                    document.querySelector(`#div${but}`).append(button);
+                    button.addEventListener('click',function(){
+                    let con = document.querySelector(`#saved`).value
+                    console.log(con)
+                        fetch(`/updatepost`, {
+                            method: 'PUT',
+                            body: JSON.stringify({
+                                post: con,
+                                id:but
+                            })
+                        })
+                        location.reload();
+                        }
+                    )
+                });
+        
+            }   
+        let Like = document.querySelectorAll('#likes');
+            for(let i = 0; i < Like.length; i++){
+                Like[i].addEventListener('click', function(){
+                    let sp = Like[i].value;
+                    let likes = document.querySelector(`#L${sp}`).innerHTML;
+                    likes = (likes * 1) + 1
+                    document.querySelector(`#L${sp}`).innerHTML = likes;
+                    fetch(`/updatelikes`, {
+                            method: 'PUT',
+                            body: JSON.stringify({
+                                like: likes,
+                                id:sp
+                            })
+                        })
+                        location.reload();
+
+                })
+            }
+    });
+</script>
+{% endblock %}
